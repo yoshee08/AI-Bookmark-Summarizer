@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css" rel="stylesheet">
+<style>
+  body { margin: 2rem; }
+  label { margin-top: 1rem; font-weight: bold; display: block; }
+  textarea, select, input[type=text], input[type=password] { width: 100%; margin-bottom: 0.5rem; padding: 0.5rem; }
+  table { width: 100%; margin-top: 1rem; border-collapse: collapse; }
+  th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+  .custom-model { display: none; }
+</style>
+</head>
+<body>
+  <h2>OpenAI Configuration</h2>
+
+  <label for="apiKey">API Key:</label>
+  <input id="apiKey" type="password" placeholder="sk-...">
+
+  <label for="endpoint">API Endpoint:</label>
+  <input id="endpoint" type="text" placeholder="https://api.openai.com/v1/chat/completions">
+
+  <label for="model">Select Model:</label>
+  <select id="model">
+    <!-- Options added dynamically -->
+  </select>
+  <div class="custom-model" id="customSection">
+    <label for="customModelName">Custom Model Name:</label>
+    <input id="customModelName" type="text" placeholder="Enter custom model identifier">
+  </div>
+
+  <h3>Available Models</h3>
+  <table>
+    <thead>
+      <tr><th>Model</th></tr>
+    </thead>
+    <tbody id="modelLimits">
+      <!-- Populated dynamically -->
+    </tbody>
+  </table>
+
+  <label for="systemMsg">System Message:</label>
+  <textarea id="systemMsg"></textarea>
+
+  <label for="promptTpl">Prompt Template:</label>
+  <textarea id="promptTpl"></textarea>
+
+  <button id="saveBtn" class="button-primary">Save Settings</button>
+  <p id="statusMsg"></p>
+  <script src="options.js"></script>
+</body>
+</html>

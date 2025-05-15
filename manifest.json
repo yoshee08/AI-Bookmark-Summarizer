@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Bookmark Manager",
+  "version": "1.4",
+  "description": "Checks bookmarks for availability, stores summaries and history, and provides a styled dashboard with customizable OpenAI settings.",
+  "permissions": ["bookmarks","storage","alarms","scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {"default_popup": "popup.html"},
+  "options_page": "options.html",
+  "background": {"service_worker": "background.js"}
+}
